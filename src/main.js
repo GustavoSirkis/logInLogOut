@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const newName = document.querySelector("#signupUsername").value
         const newEmail = document.querySelector("#email").value;
         const newPassword = document.querySelector("#password").value;
+        
         const user = {
             name: newName,
             email: newEmail,
@@ -70,11 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
     
         localStorage.setItem("user", JSON.stringify(user));
         
-       
-        
-        /* checkUser(); */
-        
-        setFormMessage(createAccountForm, "success", "Conta criada com sucesso!");
+        const userStoraged = localStorage.getItem("user");
+        const objectStoraged = JSON.parse(userStoraged);
+        console.log(objectStoraged.name)
+
+        if(newName === objectStoraged.name){
+            setFormMessage(createAccountForm, "error", "Oops algo deu errado, tente novamente!");
+        }else {            
+            setFormMessage(createAccountForm, "success", "Conta criada com sucesso!");
+        }        
     })
 
     logoutBtn.addEventListener("click", () => {
@@ -90,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 6) {
-                setInputError(inputElement, "Username must be at least 6 characters in length");
+                setInputError(inputElement, "Nome de usuário deve ter ao menos 6 caracteres");
             }
         });
 
