@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Oliveira Trade</title>
+    <!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="login">
+            <h1 class="form__title">Conecte-se!</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="username" autofocus placeholder="Nome de usuário" required>
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" id="password__input" autofocus placeholder="Palavra-chave" required>
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <!-- <a href="#" class="form__link">Esqueceu a senha?</a> -->
+            </p>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkCreateAccount">Ainda não tem uma conta? Criar conta</a>
+            </p>
+        </form>
+        <form class="form form--hidden" id="createAccount">
+            <h1 class="form__title">Nova Conta</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Nome" required>
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="email" class="form__input" id="email" autofocus placeholder="Email" required>
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" id="password" autofocus placeholder="Palavra-chave" required>
+                <div class="form__input-error-message"></div>
+            </div>
+            <!-- <div class="form__input-group">
+                <input type="password" class="form__input" id="password__confirm" autofocus placeholder="Confirme a palavra-chave">
+                <div class="form__input-error-message"></div>
+            </div> -->
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkLogin">Já é cadastrado? Sign in</a>
+            </p>
+        </form>
+        <section class="form form--hidden" id="welcome">
+            <h2>Seja bem vindo <span id="username__span"></span></h2>
+            <button class="form__button" id="logout">Sair</button>
+        </section>
+    </div>
+    <script src="./src/main.js"></script>
+    <script src="src/fetch.js"></script>
+</body>
+</html>
