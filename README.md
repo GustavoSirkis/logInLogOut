@@ -1,3 +1,3 @@
-Olá este é uma página Fake de Login e CreateAccount, que utilizando o DOM e o localStorage.
+Olá este é uma página Fake de Login e CreateAccount, que utiliza a DOM, localStorage, JavaScript, html e CSS;
 
-Site do exemplo: 
+Exemplo: https://gustavosirkis.github.io/logInLogOut/
