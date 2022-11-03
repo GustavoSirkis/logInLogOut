@@ -73,12 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const userStoraged = localStorage.getItem("user");
         const objectStoraged = JSON.parse(userStoraged);
-        console.log(objectStoraged.name)
+        
+        loginForm.classList.remove("form--hidden");
+        createAccountForm.classList.add("form--hidden");
 
-        if(newName === objectStoraged.name){
-            setFormMessage(createAccountForm, "error", "Oops algo deu errado, tente novamente!");
+        if(objectStoraged.name == null){
+            setFormMessage(loginForm, "error", "Oops algo deu errado, tente novamente!");
         }else {            
-            setFormMessage(createAccountForm, "success", "Conta criada com sucesso!");
+            setFormMessage(loginForm, "success", "Conta criada com sucesso!");
         }        
     })
 
