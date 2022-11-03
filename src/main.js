@@ -75,12 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const objectStoraged = JSON.parse(userStoraged);
         localStorage.setItem("user", JSON.stringify(user)); 
         console.log(objectStoraged)
-        
-        if(newName == objectStoraged.name){
-                setFormMessage(loginForm, "error", "Oops algo deu errado, tente novamente!");
-            }else {                       
+        if(userStoraged != null && newName == objectStoraged.name){
+            setFormMessage(loginForm, "error", "Oops algo deu errado, tente novamente!");
+        }else {                       
             setFormMessage(loginForm, "success", "Conta criada com sucesso!");
-        }       
+        }     
     })
 
     logoutBtn.addEventListener("click", () => {
