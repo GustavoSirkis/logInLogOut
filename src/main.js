@@ -59,29 +59,28 @@ document.addEventListener("DOMContentLoaded", () => {
     createAccountForm.addEventListener("submit", e =>{
         e.preventDefault();
         
+        loginForm.classList.remove("form--hidden");
+        createAccountForm.classList.add("form--hidden");
+        
         const newName = document.querySelector("#signupUsername").value
         const newEmail = document.querySelector("#email").value;
         const newPassword = document.querySelector("#password").value;
-        
+        console.log(newName)
         const user = {
             name: newName,
             email: newEmail,
             password: newPassword,
-        }
-    
-        localStorage.setItem("user", JSON.stringify(user));
-        
+        }              
         const userStoraged = localStorage.getItem("user");
         const objectStoraged = JSON.parse(userStoraged);
+        localStorage.setItem("user", JSON.stringify(user)); 
+        console.log(objectStoraged)
         
-        loginForm.classList.remove("form--hidden");
-        createAccountForm.classList.add("form--hidden");
-
-        if(objectStoraged.name == null){
-            setFormMessage(loginForm, "error", "Oops algo deu errado, tente novamente!");
-        }else {            
+        if(newName == objectStoraged.name){
+                setFormMessage(loginForm, "error", "Oops algo deu errado, tente novamente!");
+            }else {                       
             setFormMessage(loginForm, "success", "Conta criada com sucesso!");
-        }        
+        }       
     })
 
     logoutBtn.addEventListener("click", () => {
