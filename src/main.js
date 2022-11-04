@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
         welcomeSection.classList.add("form--hidden");
+        setFormMessage(loginForm, "success", "Logout com sucesso!");
         /* checkUser(); */
     })
 
