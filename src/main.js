@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             userNameElement.textContent = userObject.name;
         } else{
-            setFormMessage(loginForm, "error", "Oops algo deu errado, tente novamente!");
+            setFormMessage(loginForm, "error", "Oops...nome de usuário ou senha inválidos, tente novamente!");
             userNameElement.textContent = undefined;
         };
        
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("user", JSON.stringify(user)); 
         console.log(objectStoraged)
         if(userStoraged != null && newName == objectStoraged.name){
-            setFormMessage(loginForm, "error", "Oops algo deu errado, tente novamente!");
+            setFormMessage(loginForm, "error", "Oops...cusuário ou email já existente.");
         }else {                       
             setFormMessage(loginForm, "success", "Conta criada com sucesso!");
         }     
