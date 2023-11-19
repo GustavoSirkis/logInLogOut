@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("user", JSON.stringify(user)); 
         console.log(objectStoraged)
         if(userStoraged != null && newName == objectStoraged.name){
-            setFormMessage(loginForm, "error", "Oops...cusuário ou email já existente.");
+            setFormMessage(loginForm, "error", "Oops...usuário ou email já existente.");
         }else {                       
             setFormMessage(loginForm, "success", "Conta criada com sucesso!");
         }     
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
         welcomeSection.classList.add("form--hidden");
-        setFormMessage(loginForm, "success", "Logout com sucesso!");
+        setFormMessage(loginForm, "success", "Logout efetuado com sucesso!");
         /* checkUser(); */
     })
 
